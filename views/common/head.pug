@@ -1,0 +1,14 @@
+mixin head(title)
+    head
+        meta(charset='utf-8')
+        title=title
+        //[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]
+        //<base href="/">
+        //link(rel='stylesheet' href='../stylesheets/style.css' type='text/css')
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        link(href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet")
+        link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css")
+        script 
+             include ../../public/scripts/functions.js
+        style
+            include ../../public/stylesheets/style.css

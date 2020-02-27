@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  include ../common/head.pug
+  +head("sign up")
+  body
+    header
+      div.main-div-login-signup
+        img.logo-image(src="")
+        h2.login-signup-page-header Create user
+        div.center-all-div
+          form(action='/signup', method='POST')
+            div.login-signup-div
+              p Username
+              input(class="input-credentials", placeholder='Username', required=true, name='username', type='username', value=formData.username)
+              if (errors && errors.username)
+                p.small.text-danger #{errors.username}
+            div.login-signup-div
+              p Password
+              input(class="input-credentials", placeholder='Password',required=true, name='password', type='password', value='')
+              if (errors && errors.password)
+                p #{errors.password}
+            div.login-signup-div
+              button(class="login-create-button", type='submit') Create user
+    include ../common/footer.pug
+    +footer()

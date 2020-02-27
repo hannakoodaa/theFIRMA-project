@@ -1,0 +1,97 @@
+doctype html
+html(lang='en')
+  include common/head.pug
+  +head("Project")
+  body
+    header
+      div.main-div
+        img.logo-image(src="")
+        a#logout(href="/logout") Logout
+        img.info-image(id="info-img" src="/images/info.png" onclick="showInfo()")
+        // Modal, that shows references
+        div(id="my-modal" class="modal" onclick="showInfo()")
+          span(class="modal-content")
+            span(class="close") &times;
+            p 
+            | Information
+            p
+            | References
+            p  
+            | abc
+
+
+        // Modal that shows information about values
+        div(id="value-modal" class="modal")
+          span(class="value-modal-content")
+            span(class="close") &times;
+            h3#value-info-header
+            p#value-info-text
+            |
+
+        div.center-all-div
+          div
+            p#info-text Information header
+            h3#input-page-header Information
+            form(id="value-form" action="/value/" method="get" name="value-form")
+              div.input-information-div
+                p This or that
+                input(class="thisthat-text" type="radio" name="thisthat" value="this" required checked)
+                | <span>This</span>
+                input(class="thisthat-text" type="radio" name="thisthat" value="that" required)
+                | <span>That</span>
+              div.input-information-div
+                p Value 1
+                input(class="input-box" name="value1" type="number" placeholder="Value 1" required min="1" max="255")
+              div.input-information-div
+                p Value 2
+                input(class="input-box" name="value2" type="number" placeholder="Value 2" required min="1" max="255")
+              div.input-information-div
+                button(type="submit" id="calculate-button") CALCULATE
+                button(id="reset-button" type="button" onclick="resetAll()") RESET
+
+        p#calculate-text Input information above and click calculate
+
+        div.value-colors
+          div#value1-color Value 1 <br>
+          div#value2-color Value 2 <br> 
+        div.results
+          p#optimal-values
+
+        script.
+          $(document).ready(function () {
+            $('form').submit(function (event) {
+
+              // Get information from HTML form
+              var formData = {
+                'thisthat': $('input[name=thisthat]:checked').val(),
+                'value1': $('input[name=value1]').val(),
+                'value2': $('input[name=value2]').val()
+              };
+              // Send with POST
+              $.ajax({
+                type: 'POST',
+                url : 'http://localhost:3000/value/',
+                data: formData,
+                dataType: 'json',
+                encode: true
+              }).done(function(data){
+                console.log(data);
+                  // Get this/that for optimal values
+                  var thisthat = "";
+                  if ($('input[name=thisthat]:checked').val() == "This" && formData.thisthat == "This") {
+                    thisthat = "this"; 
+                  } else if ($('input[name=thisthat]:checked').val() == "That" && formData.thisthat == "That") {
+                    thisthat = "that";
+                  } 
+
+                  changevalueColors(data[0], data[1]);
+
+                  writeOptimalValues(data[2], data[3], thisthat);
+
+                  showvalueInfo(data[0], data[1]);
+              });
+              event.preventDefault();
+            });
+          });
+  include common/footer.pug
+  +footer()

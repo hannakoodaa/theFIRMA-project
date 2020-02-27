@@ -1,0 +1,23 @@
+
+doctype html
+html(lang='en')
+  include ../common/head.pug
+  +head("login to database")
+  body
+    header
+      div.main-div-login-signup
+        img.logo-image(src="")
+        h2.login-signup-page-header Log in
+        div.center-all-div
+          form(action='/', method='POST')
+            div.login-signup-div
+              p Username:
+              input(class="input-credentials", placeholder='Username', required=true, name='username', type='username', value='')
+            div.login-signup-div
+              p Password:
+              input(class="input-credentials", placeholder='Password',required=true, name='password', type='password', value='')
+            div.login-signup-div
+              button(class="login-create-button", type='submit') Log in
+
+    include ../common/footer.pug
+    +footer()

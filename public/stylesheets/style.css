@@ -1,0 +1,393 @@
+/* Affects all pages */
+
+body {
+    background-image: url('../images/background.jpg');
+    background-size: initial;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    margin: auto;
+}
+
+p, h3 {
+    color: #121212;
+}
+
+/* Login and signup page definitions */
+
+.main-div-login-signup {
+    background-color: white;
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 50px;
+    padding: 40px 0px 80px 0px;
+    text-align: center;
+}
+
+.login-signup-page-header {
+    text-align: left;
+    margin: 80px 0 30px 0;
+}
+
+.input-credentials {
+    margin: 10px 15px 10px 3px;
+    padding: 5px 0px;
+    width: auto;
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.login-signup-div {
+    float: left;
+}
+
+.login-create-button {
+    background-color: #04A0C6;
+    border: solid;
+    border-color: #49b3cd;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    margin: 55px 10px 0px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.login-signup-page-text {
+    font-size: 12px;
+}
+
+/* Input page definitions */
+
+.main-div {
+    /* */
+    background-color: white;
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 50px;
+    padding: 40px 0px 0px 0px;
+    text-align: center;
+    /* Needed for .centerAllDiv */
+}
+
+.center-all-div {
+    /* Centers all the elements with .main-div's text-align center */
+    display: inline-block;
+}
+
+#info-text {
+    margin: 80px 0px 40px 0px;
+    text-align: left;
+}
+
+#input-page-header {
+    text-align: left;
+}
+
+.logo-image {
+    float: left;
+    clear: both;
+    margin-left: 30px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+#logout {
+    clear: both;
+    float: right;
+    margin-top: -100px;
+    margin-right: 20px;
+}
+
+.info-image {
+    clear: both;
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin-top: -60px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.input-information-div {
+    /* Puts input fields next to each other */
+    float: left;
+    text-align: center;
+    font-size: 16px;
+}
+
+.input-unit-div {
+    float: left;
+    text-align: center;
+}
+
+input[type="radio"]:checked + span
+{
+    font-weight: bold;
+}
+
+.gender-text {
+    margin-top: 12px;
+}
+
+.unit-text {
+    margin-top: 66px;
+    font-size: 0.8rem;
+}
+
+.input-box {
+    /* Formatting the numeric input fields */
+    margin: 0px 5px 10px 5px;
+    padding: 10px 0px;
+    width: 90px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: lightgrey;
+    font-size: 1rem;
+}
+
+
+/* Arrows off the input boxes */
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Arrows off the input boxes */
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#calculate-button {
+    /* Formatting the CALCULATE-button */
+    background-color: #04A0C6;
+    border: solid;
+    border-color: #49b3cd;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    font-size: 14px;
+    margin: 35px 10px 0px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#reset-button {
+    /* Formatting the RESET-button  */
+    background-color: #545454;
+    border: solid;
+    border-color: #737373;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    font-size: 12px;
+    margin: 20px 10px 0px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#value1-color {
+    clear: both;
+    float: left;
+    background-color: grey;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 30px;
+    font-weight: bold;
+}
+
+#value2-color {
+    float: left;
+    background-color: grey;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 30px;
+    font-weight: bold;
+}
+
+.results {
+    height: 200px;
+    max-height: 200px;
+    max-width: 1200px;
+}
+
+#optimal-values {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* The modal - clicking info button opens the modal content and the modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content (the reference box's background etc*/
+
+.modal-content {
+    background-color: #fefefe;
+    width: 50%;
+    padding: 15px;
+    border-radius: 6px;
+    display: inline-block;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.value-modal-content {
+    background-color: #fefefe;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 50px;
+    width: 50%;
+}
+
+/* The modal's close button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 805px) {
+    /* For mobile phones: */
+    /* Login and signup page definitions */
+    .main-div-login-signup {
+        max-width: 300px;
+        margin-top: 5px;
+        padding: 40px 0px 80px 0px;
+        text-align: center;
+    }
+    .login-signup-page-header {
+        text-align: center;
+        margin: 80px 0 30px 0;
+    }
+    .input-credentials {
+        margin: -20px 15px 10px 3px;
+    }
+    .login-signup-div {
+        width: 100%;
+    }
+    .login-signup-page-text {
+        margin-top: 30px;
+        margin-bottom: -44px;
+        font-size: 12px;
+    }
+    /* Input page definitions */
+    .main-div {
+        /* */
+        max-width: 300px;
+        margin-top: 5px;
+        padding: 40px 0px 0px 0px;
+        text-align: center;
+        /* Needed for .centerAllDiv */
+    }
+    .center-all-div {
+        display: inline-block;
+    }
+    .logo-image {
+        width: 100px;
+    }
+    #info-text {
+        margin: -5px 5px 20px 5px;
+        text-align: center;
+        font-size: 0.9em;
+    }
+    #input-page-header {
+        margin-top: -10px;
+        text-align: center;
+        font-size: 0.9em;
+    }
+    #logout {
+        margin-top: -80px;
+        margin-right: 10px;
+    }
+    .info-image {
+        float: right;
+        width: 25px;
+        height: 25px;
+        margin-top: -40px;
+        margin-left: 10px;
+    }
+    .input-information-div {
+        width: 100%;
+    }
+
+    .unit-text {
+        margin: 0;
+        clear: both;
+        font-size: 0.8rem;
+    }
+
+    .input-unit-div {
+        visibility: hidden;
+    }
+    
+    .input-box {
+        float: right;
+        margin-right: 40px;
+    }
+    .input-information-div p {
+        float: left;
+        padding-left: 40px;
+    }
+
+    #calculate-button {
+        /* Formatting the calculate-button */
+        margin: 0 40px 0 0;
+        float: right;
+    }
+    #reset-button {
+        /* Formatting the reset-button  */
+        float: left;
+        margin: 4px 0 0 40px;
+    }
+    #calculate-text {
+        font-size: 0.9em;
+    }
+    #value1-color, #value2-color {
+        /* A bit smaller size for the mobile */
+        padding: 25px 5px 25px 5px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+    #optimal-values {
+        clear: both;
+        padding-top: 5px;
+        font-size: 0.9em;
+    }
+}
